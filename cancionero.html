@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Velo - Letras y Acordes</title>
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1"
+    />
+<meta name="description" content="Velo es un proyecto musical interactivo 
+realizado por el musico Mahuro Coletti, con ilustraciones de Jacinta y diseñado por Itérea">
+<meta name="robots" content="index,follow">
+    <!-- Link Swiper's CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css"
+    />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/site.webmanifest">
+ <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+  />
+
+<link rel="stylesheet" href="./cancionero-mobile.css"><!-- Estilos enfocados a smartphones -->
+<link rel="stylesheet" href="./cancionero-tablet.css"> <!-- Estilos enfocados a tablets -->
+<link rel="stylesheet" href="./cancionero-desktop.css"> <!-- Estilos enfocados a laptops o desktop -->
+
+<script src="https://kit.fontawesome.com/1efcf082b6.js" crossorigin="anonymous"></script>
+    <!-- FAVICONS -->
+
+
+
+  </head>
+
+  <body class="dark-mode animate__animated animate__fadeIn" style="cursor:grab" oncontextmenu="return false" onkeydown="return false">
+    
+    <!-- Swiper -->
+    
+<main class="swiper mySwiper">
+
+<section class="swiper-wrapper">
+
+  <!-- PORTADA -->
+<article class="white swiper-slide">  
+  <picture  class="cover">
+    <source media="min-width:1200px" srcset="./2__lg.jpg">
+    <source media="min-width:600px" srcset="./2__md.jpg">
+  <figure>
+    <img src="./1. Laberinto.png" title="Fotografia de Homero Prodan">
+  </figure>
+  </picture>
+
+</article>
+
+<!-- VELO - LETRAS Y ACORDES -->
+
+<!-- PROSA -->
+
+
+  <article class="white swiper-slide">   
+          
+
+            <picture>
+              <source media="min-width:1200px" srcset="./2__lg.jpg">
+              <source media="min-width:600px" srcset="./2__md.jpg">
+              <figure>
+                <img src="./2. El Baluarte del Transa.png">
+              </figure>
+              </picture>  
+      
+          </article>
+
+<!-- EL BALUARTE DEL TRANSA -->
+
+ <article class="swiper-slide">  
+
+<picture>
+  <source media="min-width:1200px" srcset="./3__lg.jpg">
+  <source media="min-width:600px" srcset="./3__md.jpg">
+  <figure>
+  <img src="./3. Aljibe.png">
+  </figure>
+  </picture>
+</article> 
+
+<!-- ALJIBE -->
+
+<article class="swiper-slide">   
+
+          <picture>
+            <source media="min-width:1200px" srcset="./4__lg.jpg">
+            <source media="min-width:600px" srcset="./4__md.jpg">
+            <figure>
+            <img src="./4. Mariposa.png">
+            </figure>
+            </picture>         
+</article> 
+
+<!-- MARIPOSA -->
+
+<article class="swiper-slide">   
+
+  <picture>
+    <source media="min-width:1200px" srcset="./4__lg.jpg">
+    <source media="min-width:600px" srcset="./4__md.jpg">
+    <figure>
+    <img src="./5. Puente.png">
+    </figure>
+    </picture>         
+</article> 
+
+<!-- PUENTE -->
+
+<article class="swiper-slide">   
+
+  <picture>
+    <source media="min-width:1200px" srcset="./4__lg.jpg">
+    <source media="min-width:600px" srcset="./4__md.jpg">
+    <figure>
+    <img src="./6. Laguna Espjo.png">
+    </figure>
+    </picture>         
+</article> 
+
+<!-- LAGUNA ESPEJO -->
+
+<article class="swiper-slide">   
+
+  <picture>
+    <source media="min-width:1200px" srcset="./4__lg.jpg">
+    <source media="min-width:600px" srcset="./4__md.jpg">
+    <figure>
+    <img src="./7. Velo.png">
+    </figure>
+    </picture>         
+</article> 
+
+<!-- VELO -->
+
+<article class="swiper-slide">   
+<button class="boton-back"><a href="./cancionero-velo-2023.pdf">Descargar Cancionero</a></button>
+
+  <button class="boton-back"
+  ><a href="#" target="_blank">DONACIONES
+  </a></button>
+<button class="boton-back"><a href="/#canciones">Volver</a></button>   
+</article> 
+
+
+
+</section>
+<div class="swiper-pagination"></div>
+</main>
+
+    <!-- Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
+
+    <!-- Initialize Swiper -->
+    <script>
+      var swiper = new Swiper(".mySwiper", {
+        pagination: {
+          el: ".swiper-pagination",
+        },
+        loop:1,
+      });
+
+  var currentPlayer;
+            function EvalSound(soundobj) {
+            
+             var thissound=document.getElementById(soundobj);
+             if(currentPlayer  && currentPlayer != thissound) {
+                  currentPlayer.pause(); 
+             }
+             if (thissound.paused)
+                        thissound.play();
+                else
+                    thissound.pause();
+                    thissound.currentTime = 0;
+                     currentPlayer = thissound;
+            }
+  document.getElementById('stopButton').addEventListener('click', () => {
+  document.querySelectorAll('audio').forEach(el => el.pause());
+});
+
+    </script>
+</body>
+</html>
